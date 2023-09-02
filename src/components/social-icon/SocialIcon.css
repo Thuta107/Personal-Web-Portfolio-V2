@@ -1,0 +1,9 @@
+.social-content {
+    color: black;
+    margin: 25px 5px;
+}
+
+.social-content:first-child {
+    color: black;
+    margin: 10px 5px 25px 5px;
+}
