@@ -5,6 +5,10 @@ import ThemeToggle from './components/theme-toggle/ThemeToggle'
 import React, { useState } from 'react';
 import NavMenu from './components/nav-menu/NavMenu';
 import { Route, Routes } from 'react-router-dom';
+import { Home } from './pages/home/Home';
+import { MyJourney } from './pages/my-journey/MyJourney';
+import { MyPortfolio } from './pages/my-portfolio/MyPortfolio';
+import { MySkills } from './pages/my-skills/MySkills';
 
 interface IThemeContext {
   darkMode: boolean,
@@ -15,27 +19,6 @@ export const ThemeContext = React.createContext<IThemeContext>({
   darkMode: true,
   toggleDarkMode: () => {}
 });
-
-function Home() {
-  return (
-    <p style={{ wordWrap: 'break-word'}}>
-      <h1 style={{ color: 'red' }}> Home HomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHome </h1>
-    </p>
-  )
-}
-
-function About() {
-  return (
-    <>
-    <h1 style={{ color: 'red' }}> About Us </h1>
-    <h1 style={{ color: 'red' }}> About Us </h1>
-    </>
-  )
-}
-
-function Testing() {
-  return <h1 style={{ color: 'red' }}> Testing </h1>
-}
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -58,11 +41,12 @@ function App() {
         <div className='center-container'>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/my-experience" element={<Testing />} />
-            <Route path="/about-me" element={<About />} />
+            <Route path="/my-journey" element={<MyJourney />} />
+            <Route path="/my-portfolio" element={<MyPortfolio />} />
+            <Route path="/my-tools" element={<MySkills />} />
           </Routes>
         </div>
-        <div className='right-container' >
+        <div className='right-container'>
           <div className='relative-container'>
             <SocialMenu/>
             <ThemeToggle/>

@@ -1,0 +1,68 @@
+.exp-container {
+    margin-top: 50px;
+    font-size: 1.2rem;
+}
+
+.exp-flex {
+    display: grid;
+    grid-template-columns: 200px auto;
+}
+
+.exp-title-mobile {
+    display: none;
+    color: gray;
+}
+
+.exp-mt {
+    margin: 25px 0 10px 0;
+}
+
+.exp-title {
+    font-weight: bold; 
+    color: gray;
+}
+
+.exp-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 20px 0 50px 0;
+}
+
+.exp-img {
+    width: 150px;
+}
+
+.exp-summary {
+    position: relative;
+    margin-left: 10px;
+}
+
+.edu-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.italic {
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+@media only screen and (max-width: 550px) {
+    .exp-flex {
+        grid-template-columns: 1fr;
+    }
+
+    .exp-title-mobile {
+        display: block;
+        margin-bottom: 0;
+    }
+
+    .exp-title {
+        display: none;
+    }
+
+    .exp-mt {
+        margin: 10px 0;
+    }
+}

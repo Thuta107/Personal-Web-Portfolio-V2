@@ -1,0 +1,115 @@
+.skill-container {
+    position: relative;
+    margin-top: 50px;
+    font-size: 1.2rem;
+}
+
+.skill-search {
+    border: 3px solid;
+    border-radius: 30px;
+    text-decoration: none;
+    height: 35px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    padding-left: 15px;
+    outline: none;
+    transition: border 0.4s ease-in-out;
+    width: 20vw;
+    margin-top: 10px;
+}
+
+.skill-search:focus {
+    border: 3px solid #2196F3;
+}
+
+.skill-chips {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.skill-chip {
+    cursor: pointer;
+    background-color: #D3D3D3;
+    color: gray;
+    margin: 5px 15px 10px 0;
+    padding: 5px 20px;
+    border-radius: 30px;
+    font-size: clamp(12px, 2vw, 14px);
+    font-weight: bolder;
+    min-width: 80px;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+}
+
+.skill-chip:hover {
+    color: white;
+    background-color: #2196F3;
+    opacity: 0.5;
+}
+
+.skill-chip-active {
+    color: white;
+    background-color: #2196F3;
+}
+
+.tools-container {
+    margin: 50px 0 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bolder;
+    font-size: clamp(12px, 2vw, 16px);
+    text-align: center;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.tool-container {
+    width: 100px;
+    padding: 5px 20px;
+    margin: 5px 15px 20px 0;
+}
+
+.tool-container-hidden {
+    display: none;
+}
+
+.tool-image {
+    width: 48px;
+    height: 48px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .skill-search {
+        width: 250px;
+    }
+
+    .skill-chips {
+        width: 100%;
+    }
+
+    .tools-container {
+        margin: 20px 0 0 0;
+    }
+
+    .tool-container {
+        width: 100px;
+        padding: 5px 20px;
+        margin: 5px 5px 20px 0;
+    }
+
+    .skill-container h1 {
+        margin-left: 5px;
+    }
+
+    .skill-search {
+        margin-left: 5px;
+    }
+
+    .skill-chips {
+        margin-left: 5px;
+    }
+}

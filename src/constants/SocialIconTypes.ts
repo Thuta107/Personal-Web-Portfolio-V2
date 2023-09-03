@@ -1,5 +1,6 @@
 export enum SocialIconTypes {
     gMail = 'GMAIL',
     linkedIn = 'LINKEDIN',
-    gitHub = 'GITHUB'
+    gitHub = 'GITHUB',
+    website = 'WEBSITE'
 }

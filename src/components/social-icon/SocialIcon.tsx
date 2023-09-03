@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BiLogoGoogle, BiLogoGithub, BiLogoLinkedin } from 'react-icons/bi'
+import { BsGlobeAsiaAustralia } from 'react-icons/bs'
 import { SocialIconTypes } from '../../constants/SocialIconTypes';
 import './SocialIcon.css'
 
@@ -45,6 +46,11 @@ export const SocialIcon: React.FunctionComponent<SocialIconProps> = ({ icon, siz
             onClick={handleClick}/>
         } else if (icon == SocialIconTypes.gitHub) {
             return <BiLogoGithub size={size} style={iconStyle} 
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onClick={handleClick}/>
+        } else if (icon == SocialIconTypes.website) {
+            return <BsGlobeAsiaAustralia size={size} style={iconStyle} 
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={handleClick}/>

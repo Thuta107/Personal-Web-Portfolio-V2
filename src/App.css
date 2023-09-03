@@ -6,22 +6,39 @@
   position: fixed;
   top: 0;
   right: 0;
+  width: 100px;
 }
 
 .left-container {
   position: fixed;
   top: 0;
   left: 0;
+  width: 160px;
 }
 
 .center-container {
   overflow: hidden;
   min-height: 100vh;
-  margin-left: 250px;
-  margin-right: 150px;
+  margin-left: 220px;
+  margin-right: 130px;
 }
 
 .relative-container {
   position: relative;
   height: 100vh;
+}
+
+@media only screen and (max-width: 1000px) {
+  .right-container {
+    display: none;
+  }
+  
+  .left-container {
+    display: none;
+  }
+
+  .center-container {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }

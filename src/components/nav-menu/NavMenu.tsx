@@ -4,10 +4,10 @@ import { NavMenuItem, NavMenuItemProps } from '../nav-menu-item/NavMenuItem';
 export default function NavMenu() {
 
     const menus: NavMenuItemProps[] = [
-        { text: 'Home', path: '' },  { text: 'About Me', path: 'about-me' },  
-        { text: 'My Experience', path: 'my-experience' },  
+        { text: 'Home', path: '' },
+        { text: 'My Journey', path: 'my-journey' },  
         { text: 'My Portfolio', path: 'my-portfolio' }, 
-        { text: 'My Skills', path: 'my-skills' }
+        { text: 'My Tools', path: 'my-tools' }
     ]
 
     return (

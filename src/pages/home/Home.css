@@ -1,0 +1,78 @@
+.home-container {
+    margin-top: 50px;
+    font-size: 1.2rem;
+}
+
+.home-flex {
+    display: grid;
+    grid-template-columns: 140px auto;
+    flex-wrap: wrap;
+}
+
+.download-btn {
+	align-items: center;
+    border: 3px solid #2196F3;
+	border-radius: 30px;
+	display: flex;
+    cursor: pointer;
+    background-color: #2196F3;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    animation: btnRipple ease-in-out 5s infinite;
+}
+
+.download-btn:hover {
+    animation: none 1s ease-in-out;
+	background-color: #2196F3;
+	border: 3px solid #2196F3;
+	color: white;
+}
+
+@keyframes btnRipple {
+	0% { 
+		background-color: #2196F3;
+		color: white;
+	}
+	50% {
+		background-color: white;
+		color: #2196F3;
+	}
+	100% { 
+		background-color: #2196F3;
+		color: white;
+	}
+}
+
+.home-title-mobile {
+    display: none;
+    color: gray;
+}
+
+.home-mt {
+    margin: 25px 0 10px 0;
+}
+
+.home-title {
+    font-weight: bold; 
+    color: gray;
+}
+
+@media only screen and (max-width: 550px) {
+    .home-flex {
+        grid-template-columns: 1fr;
+    }
+
+    .home-title-mobile {
+        display: block;
+        margin-bottom: 0;
+    }
+
+    .home-title {
+        display: none;
+    }
+
+    .home-mt {
+        margin: 10px 0;
+    }
+}
