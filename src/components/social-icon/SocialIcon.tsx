@@ -35,10 +35,11 @@ export const SocialIcon: React.FunctionComponent<SocialIconProps> = ({ icon, siz
 
     const renderSocialIcon = () => {
         if(icon == SocialIconTypes.gMail) {
-            return <BiLogoGoogle size={size} style={iconStyle} 
+            return <a href="mailto:thutalin1727@gmail.com">
+            <BiLogoGoogle size={size} style={iconStyle} 
             onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onClick={handleClick}/>
+            onMouseLeave={handleMouseLeave}/>
+            </a> 
         } else if (icon == SocialIconTypes.linkedIn) {
             return <BiLogoLinkedin size={size} style={iconStyle} 
             onMouseEnter={handleMouseEnter}

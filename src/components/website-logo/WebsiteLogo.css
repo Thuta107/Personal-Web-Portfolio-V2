@@ -1,3 +1,9 @@
 .logo-container {
     margin: 25px 0 0 25px;
 }
+
+@media only screen and (max-width: 1000px) {
+    .logo-container {
+        margin: 0
+    }
+}

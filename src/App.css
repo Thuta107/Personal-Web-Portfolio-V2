@@ -28,6 +28,13 @@
   height: 100vh;
 }
 
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
 @media only screen and (max-width: 1000px) {
   .right-container {
     display: none;
@@ -40,5 +47,10 @@
   .center-container {
     margin-left: 20px;
     margin-right: 20px;
+    padding-top: 70px;
+  }
+
+  .mobile-header {
+    display: inherit;
   }
 }

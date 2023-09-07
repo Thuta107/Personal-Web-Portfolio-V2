@@ -9,6 +9,7 @@ import { Home } from './pages/home/Home';
 import { MyJourney } from './pages/my-journey/MyJourney';
 import { MyPortfolio } from './pages/my-portfolio/MyPortfolio';
 import { MySkills } from './pages/my-skills/MySkills';
+import MobileHeader from './components/mobile-header/MobileHeader';
 
 interface IThemeContext {
   darkMode: boolean,
@@ -31,10 +32,13 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
-      <div className='main-container' style={containerStyle}>
+      <section className='main-container' style={containerStyle}>
+        <div className='mobile-header'> 
+          <MobileHeader /> 
+        </div>
         <div className='left-container'>
           <div className='relative-container'>
-            <WebsiteLogo/>
+            <WebsiteLogo darkMode={darkMode}/>
             <NavMenu/>
           </div>
         </div>
@@ -52,7 +56,7 @@ function App() {
             <ThemeToggle/>
           </div>
         </div>
-      </div>
+      </section>
     </ThemeContext.Provider>
   )
 }

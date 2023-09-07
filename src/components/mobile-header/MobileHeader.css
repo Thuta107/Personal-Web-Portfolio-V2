@@ -1,0 +1,25 @@
+.mobile-top-nav {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    align-items: center;
+    text-align: center;
+    padding: 10px 30px 10px 10px;
+    vertical-align: middle;
+}
+
+.left-menu {
+    position: relative;
+    cursor: pointer;
+    top: -12px;
+    left: -12px;
+}
+
+.left-menu-icon {
+    position: absolute;
+}
+
+@media only screen and (max-width: 1000px) {
+    .mobile-header-container {
+        display: block;
+    }
+}
