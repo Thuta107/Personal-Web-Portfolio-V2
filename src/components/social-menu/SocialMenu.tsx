@@ -11,11 +11,11 @@ export default function SocialMenu() {
     },
     { 
         icon: SocialIconTypes.gitHub, size: 35, color: '#5c6bc0', 
-        link: 'https://www.linkedin.com/in/thuta-lin' 
+        link: 'https://github.com/Thuta107' 
     },
     { 
         icon: SocialIconTypes.gMail, size: 35, color: '#f00', 
-        link: 'https://www.linkedin.com/in/thuta-lin' 
+        link: '' 
     }]
 
     return (
