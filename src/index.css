@@ -8,11 +8,34 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  --blue: #2196F3;
+  --orange: orange;
+  --black: rgb(15 14 23);
+  --white: #fff;
+  --gray: #D3D3D3;
+  --gray2: gray;
+  --moon: #EBC815;
+  --sun: #FDB813;
+  --red: red;
+  --green: rgb(3, 192, 74);
+  --linkedin: #0072b1;
+  --github: #5c6bc0;
+  --gmail: #f00;
+  --milk: rgb(254 252 247);
+  --black2: rgb(20, 20, 20);
 }
 
 body {
   margin: 0;
   min-height: 100vh;
+}
+
+.bolder {
+  font-weight: bolder;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 p {

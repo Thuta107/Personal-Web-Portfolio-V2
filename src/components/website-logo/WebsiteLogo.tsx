@@ -1,6 +1,7 @@
 import logo from '../../images/Logo.png'
 import whiteLogo from '../../images/LogoWhite.webp'
 import './WebsiteLogo.css'
+
 export interface ILogoProps {
     darkMode: boolean
 }

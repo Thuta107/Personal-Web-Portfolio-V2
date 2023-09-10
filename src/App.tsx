@@ -33,7 +33,7 @@ function App() {
   return (
     <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
       <section className='main-container' style={containerStyle}>
-        <div className='mobile-header'> 
+        <div className='mobile-header-container'> 
           <MobileHeader /> 
         </div>
         <div className='left-container'>
@@ -53,16 +53,14 @@ function App() {
         <div className='right-container'>
           <div className='relative-container'>
             <SocialMenu/>
-            <ThemeToggle/>
+            <div className='theme-container'>
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </section>
     </ThemeContext.Provider>
   )
 }
-
-// function Home() {
-//   return <><h1> Home </h1></>
-// }
 
 export default App

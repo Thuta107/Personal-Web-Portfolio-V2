@@ -3,6 +3,7 @@ import { ThemeContext } from '../../App';
 import { FaDownload } from 'react-icons/fa'
 import './Home.css'
 import { WorkStatus } from '../../components/work-status/WorkStatus';
+import { WorkStatusConstants } from '../../constants/WorkStatusConstants';
 
 export const Home = () => {
     const { darkMode } = useContext(ThemeContext); 
@@ -51,7 +52,7 @@ export const Home = () => {
                     <span> I'm currently </span> 
                 </p>
                 <h2 className='home-title-mobile'> I'm currently </h2>
-                <WorkStatus index={1} />
+                <WorkStatus status={WorkStatusConstants.LOOKING_FOR_NEW_JOB} />
             </div>
 
             <div className='home-flex'>

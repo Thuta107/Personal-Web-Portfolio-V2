@@ -1,4 +1,4 @@
-.mobile-top-nav {
+.mobile-header {
     display: grid;
     grid-template-columns: 50px 1fr 50px;
     align-items: center;
@@ -7,19 +7,20 @@
     vertical-align: middle;
 }
 
-.left-menu {
+.right-menu {
     position: relative;
     cursor: pointer;
-    top: -12px;
-    left: -12px;
+    top: -15px;
+    right: -5px;
 }
 
-.left-menu-icon {
+.right-menu-icon {
     position: absolute;
 }
 
-@media only screen and (max-width: 1000px) {
-    .mobile-header-container {
-        display: block;
-    }
+.theme-mobile-container {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    margin: 5px 0 5px 15px;
 }

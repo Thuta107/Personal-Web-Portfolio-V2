@@ -3,7 +3,7 @@ import { ThemeContext } from '../../App';
 import './MyPortfolio.css'
 import { PersonalProjects } from '../../constants/PersonalProjects';
 import { SocialIcon } from '../../components/social-icon/SocialIcon';
-import { SocialIconTypes } from '../../constants/SocialIconTypes';
+import { SocialConstants } from '../../constants/SocialConstants';
 
 export const MyPortfolio = () => {
     const { darkMode } = useContext(ThemeContext); 
@@ -50,12 +50,12 @@ export const MyPortfolio = () => {
                                 <div className='project-links'>
                                     {project.github ? 
                                     <div>
-                                        <SocialIcon icon={SocialIconTypes.gitHub}
+                                        <SocialIcon code={SocialConstants.GITHUB}
                                         size={40} color={'#5c6bc0'} link={project.github}/>
                                     </div> : <></>}
                                     {project.domain ? 
                                     <div style={{ padding: '3px 8px' }}>
-                                        <SocialIcon icon={SocialIconTypes.website}
+                                        <SocialIcon code={SocialConstants.WEBSITE}
                                         size={34} color={'green'} link={project.domain}/>
                                     </div> : <></>}
                                 </div>

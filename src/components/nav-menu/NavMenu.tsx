@@ -1,18 +1,19 @@
 import './NavMenu.css';
-import { NavMenuItem, NavMenuItemProps } from '../nav-menu-item/NavMenuItem';
+import { NavMenuItem } from '../nav-menu-item/NavMenuItem';
+import { RouteConstants, NavMenuProps } from '../../constants/RouteConstants';
 
 export default function NavMenu() {
 
-    const menus: NavMenuItemProps[] = [
-        { text: 'Home', path: '' },
-        { text: 'My Journey', path: 'my-journey' },  
-        { text: 'My Portfolio', path: 'my-portfolio' }, 
-        { text: 'My Tools', path: 'my-tools' }
+    const menus: NavMenuProps[] = [
+        { text: 'Home', route: RouteConstants.HOME },
+        { text: 'My Journey', route: RouteConstants.MY_JOURNEY },  
+        { text: 'My Portfolio', route: RouteConstants.MY_PORTFOLIO }, 
+        { text: 'My Tools', route: RouteConstants.MY_TOOLS }
     ]
 
     return (
         <nav className='nav-container'>
-            { menus.map(menu => <NavMenuItem text={menu.text} path={menu.path} />) }
+            { menus.map(menu => <NavMenuItem text={menu.text} route={menu.route} />) }
         </nav>
     )
 }

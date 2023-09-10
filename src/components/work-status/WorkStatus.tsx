@@ -1,30 +1,28 @@
+import { WorkStatusConstants, WorkStatusInfoConstants } from '../../constants/WorkStatusConstants'
 import './WorkStatus.css'
 
-export type WorkStatusProps = {
-    index: number
+type WorkStatusProps = {
+    status: WorkStatusConstants
 }
 
-export const WorkStatus: React.FunctionComponent<WorkStatusProps> = ({ index }) => { 
-
+export const WorkStatus: React.FunctionComponent<WorkStatusProps> = ({ status }) => { 
+    
     const selectEmoji = () => {
-        if(index == 0) {
-            return <span>&#128583;</span>
-        } else if (index == 1) {
-            return <span>&#128582;</span>
-        } else if (index == 2) {
-            return <span>&#128581;</span>
+        switch(status) {
+            case WorkStatusConstants.EMPLOYED:
+                return <span>&#128581;</span>
+            case WorkStatusConstants.UNEMPLOYED:
+                return <span>&#128583;</span>
+            case WorkStatusConstants.LOOKING_FOR_NEW_JOB:
+                return <span>&#128582;</span>
+            default:
+                break
         }
     }
 
-    const statusAvailable = [
-        { text: 'Open to New Opportunities and Activly Looking for Work', color: 'rgb(3, 192, 74)' },
-        { text: 'Under Employment but Open to New Opportunities', color: 'orange' },
-        { text: 'Under Active Employment and Not Looking for New Opportunities', color: 'red' },
-    ]
-
     return (
-        <p className="work-bold" style={{ color: statusAvailable[index].color }}> 
-            <span> {statusAvailable[index].text } </span> 
+        <p className='bold' style={{ color: WorkStatusInfoConstants[status]?.color }}> 
+            <span> { WorkStatusInfoConstants[status]?.text } </span> 
             {selectEmoji()}
         </p>
     )

@@ -50,7 +50,7 @@ export enum ProgrammingSkillsType {
     nodeJs = 'NodeJS',
     rxJs = 'RxJS',
     git = 'Git',
-    gitLab = 'gitLab',
+    gitLab = 'GitLab',
     gitHub = 'GitHub',
     bitBucket = 'Bitbucket',
     mongoDB = 'MongoDB',

@@ -1,31 +1,19 @@
 import React, { useState } from 'react';
 import { BiLogoGoogle, BiLogoGithub, BiLogoLinkedin } from 'react-icons/bi'
 import { BsGlobeAsiaAustralia } from 'react-icons/bs'
-import { SocialIconTypes } from '../../constants/SocialIconTypes';
+import { SocialConstants } from '../../constants/SocialConstants';
 import './SocialIcon.css'
+import { SocialIconProps } from '../../constants/SocialConstants';
 
-export type SocialIconProps = {
-    icon: string, 
-    size: number,
-    color: string,
-    link: string
-}
-
-export const SocialIcon: React.FunctionComponent<SocialIconProps> = ({ icon, size, color, link }) => {
+export const SocialIcon: React.FunctionComponent<SocialIconProps> = ({ code, size, color, link }) => {
 
     const [isHover, setIsHover] = useState(false)
 
-    const handleMouseEnter = () => {
-        setIsHover(true)
-    }
+    const handleMouseEnter = () => setIsHover(true)
 
-    const handleMouseLeave = () => {
-        setIsHover(false)
-    }
+    const handleMouseLeave = () => setIsHover(false)
 
-    const handleClick = () => {
-        window.open(link, '_blank')
-    }
+    const handleClick = () => window.open(link, '_blank')
 
     const iconStyle = {
         color: isHover ? color : 'gray',
@@ -34,23 +22,23 @@ export const SocialIcon: React.FunctionComponent<SocialIconProps> = ({ icon, siz
     }
 
     const renderSocialIcon = () => {
-        if(icon == SocialIconTypes.gMail) {
-            return <a href="mailto:thutalin1727@gmail.com">
+        if(code == SocialConstants.GMAIL) {
+            return <a href={`mailto:${link}`}>
             <BiLogoGoogle size={size} style={iconStyle} 
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}/>
             </a> 
-        } else if (icon == SocialIconTypes.linkedIn) {
+        } else if (code == SocialConstants.LINKEDIN) {
             return <BiLogoLinkedin size={size} style={iconStyle} 
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={handleClick}/>
-        } else if (icon == SocialIconTypes.gitHub) {
+        } else if (code == SocialConstants.GITHUB) {
             return <BiLogoGithub size={size} style={iconStyle} 
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={handleClick}/>
-        } else if (icon == SocialIconTypes.website) {
+        } else if (code == SocialConstants.WEBSITE) {
             return <BsGlobeAsiaAustralia size={size} style={iconStyle} 
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}

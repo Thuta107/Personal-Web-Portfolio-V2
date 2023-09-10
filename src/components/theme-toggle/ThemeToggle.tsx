@@ -8,31 +8,23 @@ export default function ThemeToggle() {
     const { toggleDarkMode } = useContext(ThemeContext); 
 
     const darkIconStyle = {
-        position: 'absolute',
-        zIndex: 2,
-        top: '8px',
         right: '8px',
-        color: '#EBC815'
+        color: 'var(--moon)'
     }
 
     const lightIconStyle = {
-        position: 'absolute',
-        zIndex: 2,
-        top: '8px',
         left: '8px',
-        color: '#FDB813'
+        color: 'var(--sun)'
     }
 
-    const handleClick = () => { toggleDarkMode() }
+    const handleClick = () => toggleDarkMode()
 
     return (
-        <section className='theme-container'>
-            <label className="switch">
-                <input type="checkbox" onClick={handleClick} />
-                <span className="slider"></span>
-                <BsFillSunFill style={lightIconStyle} size={18} />
-                <BsMoonStarsFill style={darkIconStyle} />
-            </label>
-        </section>
+        <label className="switch">
+            <input type="checkbox" onClick={handleClick} />
+            <span className="slider"></span>
+            <BsFillSunFill className='theme-icon' style={lightIconStyle} size={18} />
+            <BsMoonStarsFill className='theme-icon' style={darkIconStyle} />
+        </label>
     )
 }
