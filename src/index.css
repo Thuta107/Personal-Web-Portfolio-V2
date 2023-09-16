@@ -1,16 +1,18 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  line-height: 2;
+  word-spacing: 2px;
+  letter-spacing: 1;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  
   --blue: #2196F3;
   --orange: orange;
-  --black: rgb(15 14 23);
+  --black: rgb(15, 14, 23);
   --white: #fff;
   --gray: #D3D3D3;
   --gray2: gray;
@@ -21,25 +23,47 @@
   --linkedin: #0072b1;
   --github: #5c6bc0;
   --gmail: #f00;
-  --milk: rgb(254 252 247);
+  --lace: #F8F2ED;
   --black2: rgb(20, 20, 20);
+  --body: rgb(15, 14, 23);
+  --charcoal: #232023;
+
+  --text-xxl: 42px; 
+  --text-xl: 34px; 
+  --text-lg: 24px;
+  --text-md: 20px; 
+  --text-sm: 16px;
+  --text-xs: 14px;
+  --text-xxs: 12px;
 }
 
 body {
   margin: 0;
-  min-height: 100vh;
+  background-color: var(--body);
+  transition: background-color 0.5s ease-in-out;
 }
 
 .bolder {
   font-weight: bolder;
 }
 
+p {
+  font-size: var(--text-md);
+}
+
 .bold {
   font-weight: bold;
 }
 
-p {
-  word-spacing: 1px;
-  line-height: 35px;
+.left-title {
+  margin-top: 18px;
+  margin-bottom: 0;
+  font-size: var(--text-md);
+  color: var(--gray2);
 }
 
+@media only screen and (max-width: 550px) {
+  .left-title {
+    font-size: var(--text-lg);
+  }
+}

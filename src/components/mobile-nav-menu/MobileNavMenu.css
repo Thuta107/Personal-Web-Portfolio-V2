@@ -2,16 +2,19 @@
     position: fixed;
     top: 80px;
     margin: 10px 0 20px 8px;
-    padding: 20px 30px 20px 10px;
+    padding: 10px 30px 20px 10px;
     transition: left 0.4s ease-in-out;
     left: -300px;
-    height: 83vh;
+    height: 75vh;
     border-radius: 15px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 .mobile-nav-main {
     padding-top: 20px;
-    min-width: 200px;
+    width: 200px;
 }
 
 .mobile-nav-main::before {
@@ -41,7 +44,7 @@
 
 .mobile-nav-socials {
     padding-top: 30px;
-    min-width: 200px;
+    width: 200px;
 }
 
 .mobile-nav-socials::before {
@@ -81,4 +84,8 @@
     padding: 5px 0;
     font-size: 16px;
     font-weight: 500;
+}
+
+.mobile-nav::-webkit-scrollbar {
+    display: none;
 }

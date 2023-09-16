@@ -1,11 +1,12 @@
 .home-container {
-    margin-top: 50px;
-    font-size: 1.2rem;
+    position: relative;
+    margin-top: 80px;
+    font-size: var(--txt-md);
 }
 
 .home-flex {
     display: grid;
-    grid-template-columns: 140px auto;
+    grid-template-columns: 160px auto;
     flex-wrap: wrap;
 }
 
@@ -16,16 +17,24 @@
     cursor: pointer;
     background-color: var(--blue);
     padding: 15px;
-    font-size: 1.1rem;
-    font-weight: bold;
+    font-size: var(--text-md);
     animation: btnRipple ease-in-out 5s infinite;
+    white-space: nowrap;
 }
 
-.download-btn:hover {
-    animation: none 1s ease-in-out;
-	background-color: var(--blue);
-	border: 3px solid var(--blue);
-	color: var(--white);
+.contact-btn {
+    position: relative;
+    align-items: center;
+    border: 2px solid rgba(0, 0, 0, 0);
+	display: flex;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0 15px;
+    color: var(--gray2);
+    font-size: var(--text-md);
+    animation: btnUpDown ease-in-out 3s infinite;
+    top: -10px;
+    white-space: nowrap;
 }
 
 @keyframes btnRipple {
@@ -43,35 +52,69 @@
 	}
 }
 
-.home-title-mobile {
-    display: none;
-    color: var(--gray);
+@keyframes btnUpDown {
+	0% { 
+		top: -10px;
+	}
+    50% {
+		top: 10px;
+	}
+	100% { 
+		top: -10px;
+	}
 }
 
-.home-mt {
+.home-btn-flex {
+    display: flex;
     margin: 25px 0 10px 0;
+    flex-wrap: wrap;
 }
 
-.home-title {
-    font-weight: bold; 
-    color: var(--gray);
+.home-btn-flex * {
+    margin: 0 10px 0 0;
 }
+  
 
 @media only screen and (max-width: 550px) {
     .home-flex {
         grid-template-columns: 1fr;
     }
 
-    .home-title-mobile {
-        display: block;
-        margin-bottom: 0;
+    .intro-title {
+        font-size: var(--text-xl);
     }
 
-    .home-title {
-        display: none;
+    .home-container {
+        margin-top: 40px;
     }
 
-    .home-mt {
-        margin: 10px 0;
+    .home-btn-flex a {
+        padding-top: 20px;
+    }
+}
+
+/* For the intro title font */
+.intro-title {
+    display: flex;
+    font-size: var(--text-xxl);
+    line-height: 1.2;
+    margin: 26px auto;
+}
+
+.intro-name {
+    color: var(--blue);
+    white-space: nowrap;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .download-btn:hover {
+        animation: none 1s ease-in-out;
+        background-color: var(--blue);
+        border: 2px solid var(--blue);
+        color: var(--white);
+    }
+
+    .contact-btn:hover {
+        color: var(--blue);
     }
 }

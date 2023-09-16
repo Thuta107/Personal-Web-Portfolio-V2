@@ -4,16 +4,17 @@ import './MyPortfolio.css'
 import { PersonalProjects } from '../../constants/PersonalProjects';
 import { SocialIcon } from '../../components/social-icon/SocialIcon';
 import { SocialConstants } from '../../constants/SocialConstants';
+import { motion } from 'framer-motion'
 
 export const MyPortfolio = () => {
     const { darkMode } = useContext(ThemeContext); 
 
     const containerStyle = {
-        color: darkMode ? 'white' : 'black'
+        color: darkMode ? 'var(--white)' : 'var(--black2)'
     }
 
     const projTitleStyle = {
-        color: darkMode ? '#2196F3' : 'orange',
+        color: darkMode ? 'var(--blue)' : 'var(--orange)',
         margin: 'margin: 5px 0 15px 0'
     }
 
@@ -22,21 +23,22 @@ export const MyPortfolio = () => {
         backgroundColor: darkMode ? '#2196F3' : 'orange'
     }
 
-    projChipStyle
-
     const projects = PersonalProjects
 
     return (
-        <div className='project-container' style={containerStyle}>
-            <h1> My Portfolio &#128194; </h1>
+        <motion.div className='project-container' style={containerStyle}
+            initial={{ left: -3000, opacity: 0 }} 
+            animate={{ left: 0, opacity: 1 }} 
+            transition={{ duration: 0.5, ease: 'easeInOut'}}>
+            <h1 className='title'> My Portfolio &#128194; </h1>
             {projects.map(project => 
-                <div className='project-flex'>
-                    <h3 className='project-title'> {project.title} </h3> 
-                    <div className='project-info'> 
+                <div className='project-main-grid'>
+                    <h2 className='project-header left-title bolder'> {project.title} </h2>
+                    <p className='project-info'> 
                         <img className='project-img' src={project.image} />
                         <div className='project-grid'>
                             <p> 
-                                <h3 style={projTitleStyle}> { project.title } </h3>
+                                <h3 className='subtitle' style={projTitleStyle}> { project.title } </h3>
                                 <span> {project.desc} </span>
                             </p>
                             <div>
@@ -61,9 +63,9 @@ export const MyPortfolio = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </p>
                 </div>
             )}
-        </div>
+        </motion.div>
     )
 }

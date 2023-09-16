@@ -19,7 +19,7 @@ export const MobileNavMenu: React.FunctionComponent<MobileNavMenuProps> = ({ ope
 
     const mobileNavStyle = {
         color: (darkMode) ? 'var(--white)' : 'var(--black2)',
-        backgroundColor: (darkMode) ? 'var(--black2)' : 'var(--milk)'
+        backgroundColor: (darkMode) ? 'var(--charcoal)' : 'var(--lace)'
     }
 
     const positionStyle = {

@@ -1,13 +1,13 @@
 .project-container {
+    position: relative;
     margin-top: 50px;
-    font-size: 1.2rem;
 }
 
 .project-img {
     width: 100%;
 }
 
-.project-flex {
+.project-main-grid {
     display: grid;
     grid-template-columns: 150px auto;
     flex-wrap: wrap;
@@ -26,12 +26,12 @@
 
 .project-info {
     margin: 0 20px;
-    font-weight: 600;
 }
 
 .project-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 .project-chips {
@@ -44,7 +44,7 @@
     margin: 5px 15px 10px 0;
     padding: 5px 20px;
     border-radius: 30px;
-    font-size: clamp(12px, 2vw, 14px);
+    font-size: var(--text-sm);
     font-weight: bolder;
     min-width: 80px;
     text-align: center;
@@ -57,12 +57,31 @@
     flex-wrap: wrap;
 }
 
+.project-header {
+    display: inline-block;
+}
+
+@media only screen and (max-width: 550px) {
+    .project-chip {
+        font-size: var(--text-xxs);
+    }
+    
+}
+
 @media only screen and (max-width: 1000px) {
     .project-title {
         display: none;
     }
 
-    .project-flex {
+    .project-chip {
+        font-size: var(--text-xs);
+    }
+
+    .project-header {
+        display: none;
+    }
+
+    .project-main-grid {
         grid-template-columns: 1fr;
     }
 

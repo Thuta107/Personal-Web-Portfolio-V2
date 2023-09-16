@@ -1,7 +1,6 @@
 .skill-container {
     position: relative;
     margin-top: 50px;
-    font-size: 1.2rem;
 }
 
 .skill-search {
@@ -9,17 +8,16 @@
     border-radius: 30px;
     text-decoration: none;
     height: 35px;
-    font-size: 1.2rem;
-    font-weight: bolder;
+    font-size: var(--text-md);
+    font-weight: bold;
     padding-left: 15px;
     outline: none;
-    transition: border 0.4s ease-in-out;
     width: 20vw;
     margin-top: 10px;
 }
 
 .skill-search:focus {
-    border: 3px solid #2196F3;
+    border: 3px solid var(--blue);
 }
 
 .skill-chips {
@@ -33,53 +31,47 @@
 
 .skill-chip {
     cursor: pointer;
-    background-color: #D3D3D3;
-    color: gray;
+    background-color: var(--gray);
+    color: var(--gray2);
     margin: 5px 15px 10px 0;
     padding: 5px 20px;
     border-radius: 30px;
-    font-size: clamp(12px, 2vw, 14px);
-    font-weight: bolder;
+    font-size: var(--text-sm);
+    font-weight: bold;
     min-width: 80px;
     text-align: center;
-    transition: all 0.5s ease-in-out;
-}
-
-.skill-chip:hover {
-    color: white;
-    background-color: #2196F3;
-    opacity: 0.5;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 
 .skill-chip-active {
-    color: white;
-    background-color: #2196F3;
+    color: var(--white);
+    background-color: var(--blue);
+}
+
+.skill-chip-inactive {
+    color: var(--gray2);
+    background-color: var(--gray);
 }
 
 .tools-container {
     margin: 50px 0 0 15px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px;
     font-weight: bolder;
-    font-size: clamp(12px, 2vw, 16px);
-    text-align: center;
+    font-size: var(--text-sm);
     align-items: center;
-    justify-content: flex-start;
+    justify-items: center;
 }
 
 .tool-container {
-    width: 100px;
-    padding: 5px 20px;
-    margin: 5px 15px 20px 0;
-}
-
-.tool-container-hidden {
-    display: none;
+    width: 100%;
+    text-align: center;
 }
 
 .tool-image {
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -91,14 +83,13 @@
         width: 100%;
     }
 
-    .tools-container {
-        margin: 20px 0 0 0;
+    .skill-chip {
+        font-size: var(--text-xs);
     }
 
-    .tool-container {
-        width: 100px;
-        padding: 5px 20px;
-        margin: 5px 5px 20px 0;
+    .tools-container {
+        font-size: var(--text-xs);
+        margin: 20px 0 0 0;
     }
 
     .skill-container h1 {
@@ -111,5 +102,13 @@
 
     .skill-chips {
         margin-left: 5px;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .skill-chip:hover {
+        color: var(--white);
+        background-color: var(--blue);
+        opacity: 0.5;
     }
 }

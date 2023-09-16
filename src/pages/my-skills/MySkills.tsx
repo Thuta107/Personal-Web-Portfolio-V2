@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../../App';
 import './MySkills.css'
 import { ProgrammingLabelsList, ProgrammingSkillsList } from '../../constants/ProgrammingSkills';
+import { motion } from 'framer-motion'
 
 export const MySkills = () => {
     const { darkMode } = useContext(ThemeContext);
@@ -28,11 +29,12 @@ export const MySkills = () => {
         } else {
             temp.push(label)
         }
+        checkSelectedLabels(label)
         setChips(temp)
     }
 
     const checkSelectedLabels = (label: string) => {
-        return chips.some(chip => chip == label) ? 'skill-chip-active' : ''
+        return chips.some(chip => chip == label) ? 'skill-chip-active' : 'skill-chip-inactive'
     }
 
     function handleInputChange(word: string) {
@@ -58,8 +60,11 @@ export const MySkills = () => {
     }, [chips, input])
   
     return (
-        <div className='skill-container' style={containerStyle}>
-            <h1> My Tools &#128187; </h1>
+        <motion.div className='skill-container' style={containerStyle}
+            initial={{ left: -3000, opacity: 0 }} 
+            animate={{ left: 0, opacity: 1 }} 
+            transition={{ duration: 0.5, ease: 'easeInOut'}}>
+            <h1 className='title'> My Tools &#128187; </h1>
             <input className='skill-search' placeholder='&#128270; Search' style={serachBgStyle}
                 onChange={(event) => handleInputChange(event.target.value)}>
             </input>
@@ -79,6 +84,6 @@ export const MySkills = () => {
                     </div>
                 )}
             </div>
-        </div>
+        </motion.div>
     )
 }

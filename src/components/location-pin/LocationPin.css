@@ -1,0 +1,9 @@
+.pin-flex {
+    display: flex;
+    text-align: right;
+    align-items: center;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}

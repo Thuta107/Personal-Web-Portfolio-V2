@@ -24,10 +24,19 @@ export const ThemeContext = React.createContext<IThemeContext>({
 function App() {
   const [darkMode, setDarkMode] = useState(true);
 
-  const toggleDarkMode = () => { setDarkMode((prev) => !prev) }
+  const setHTMLBodyColor = (prev: boolean) => {
+    document.documentElement.style.setProperty('--body', (prev) ? 'var(--black)' : 'var(--white)')
+  }
+
+  const toggleDarkMode = () => { 
+    setDarkMode((prev) => {
+      setHTMLBodyColor(!prev)
+      return !prev
+    }) 
+  }
 
   const containerStyle = {
-    backgroundColor: darkMode ? 'black' : 'white'
+    backgroundColor: darkMode ? 'var(--black)' : 'var(--white)'
   }
 
   return (

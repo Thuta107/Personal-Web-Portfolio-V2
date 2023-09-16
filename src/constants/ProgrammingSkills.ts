@@ -98,13 +98,13 @@ export const ProgrammingSkillsList = [
 ]
 
 export const ProgrammingLabelsList = [
+    ProgrammingLabelsType.topSkills,
     ProgrammingLabelsType.frontEnd,
     ProgrammingLabelsType.backEnd,
     ProgrammingLabelsType.cicd,
-    ProgrammingLabelsType.topSkills,
-    ProgrammingLabelsType.cloud,
     ProgrammingLabelsType.db,
     ProgrammingLabelsType.mobile,
-    ProgrammingLabelsType.taskTracking,
     ProgrammingLabelsType.testing,
+    ProgrammingLabelsType.taskTracking,
+    ProgrammingLabelsType.cloud,
 ]

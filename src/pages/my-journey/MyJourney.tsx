@@ -2,80 +2,89 @@ import { useContext } from 'react';
 import { ThemeContext } from '../../App';
 import './MyJourney.css'
 import { Educations, WorkExperience } from '../../constants/Experience';
-import { MdLocationPin } from 'react-icons/md'
+import { LocationPin } from '../../components/location-pin/LocationPin';
+import { motion } from 'framer-motion'
 
 export const MyJourney = () => {
     const { darkMode } = useContext(ThemeContext); 
 
     const containerStyle = {
-        color: darkMode ? 'white' : 'black'
+        color: darkMode ? 'var(--white)' : 'var(--black2)'
     }
 
-    const expDateStyle = {
-        color: darkMode ? '#2196F3' : 'orange',
-        margin: 'margin: 5px 0 15px 0'
+    const dateStyle = {
+        color: darkMode ? 'var(--blue)' : 'var(--orange)',
     }
 
-    // const expAtStyle = {
-    //     color: darkMode ? 'orange' : '#2196F3',
-    // }
+    const atStyle = {
+        color: !darkMode ? 'var(--blue)' : 'var(--orange)',
+    }
 
     const education = Educations;
     const work = WorkExperience;
 
     return (
-        <div className='exp-container' style={containerStyle}>
-            <h1> My Journey &#128640; </h1>
+        <motion.div className='exp-container' style={containerStyle}
+            initial={{ left: -3000, opacity: 0 }} 
+            animate={{ left: 0, opacity: 1 }} 
+            transition={{ duration: 0.5, ease: 'easeInOut'}}>
+            <h1 className='title'> My Journey &#128640; </h1>
 
-            <div className='exp-flex'>
-                <p className='exp-title'> 
-                    <span> 💼 Experience </span> 
-                </p>
-                <h2 className='exp-title-mobile'> 💼 Experience </h2>
-                <div>
-                    {work.map(edu => 
-                        <div className='exp-grid'>
-                            <div className='exp-summary'>
-                                <img className='exp-img' src={edu.image} /> 
-                                <h4> 
-                                    <span> {edu.role} </span> 
-                                    <span style={{ color: 'orange' }}> @ </span> 
-                                    <span style={{ color: 'gray' }}> { edu.title } </span> 
-                                </h4>
-                                <p style={{ color: 'orange' }} className='italic'> { edu.date } </p>
-                                <div style={{ position: 'absolute', right: '30px', top: '10px', color: '#2196F3' }}> 
-                                    <span style={{ verticalAlign: 'middle' }}> <MdLocationPin size={24}/> </span>
-                                    <span>{ edu.location }</span> 
-                                </div>
-                                <p> { edu.desc } </p>
+            <div className='exp-main-grid'>
+                <h2 className='left-title bolder'> 💼 Experience </h2>
+                <p className='journey-grid'>
+                    {work.map(edu => <>
+                        <div className='journey-info'>
+                            <div className={`journey-img-container ${edu.imagePadding ? 'journey-padding' : ''}`}>
+                                <img className='journey-img' src={edu.image} /> 
                             </div>
+                            <p style={dateStyle} className='bold journey-date'> { edu.date } </p>
                         </div>
+                        <div className='journey-desc'>
+                            <h3 className='subtitle'> 
+                                <span> {edu.role} </span> 
+                                <span style={atStyle}> @ </span> 
+                                <span className='job-position'> { edu.title } </span> 
+                            </h3>
+                            <p style={dateStyle} className='bold journey-date-mb'> { edu.date } </p>
+                            <p>
+                                { edu.desc.map((para, index) => <>
+                                    <div> { para } </div> {(index == edu.desc.length - 1) ? <></> : <br/>}
+                                </>)}
+                            </p>
+                            <LocationPin text={edu.location} />
+                        </div></>
                     )}
-                </div>
+                </p>
             </div>
 
-            <div className='exp-flex'>
-                <p className='exp-title'> 
-                    <span> 🎓 Education </span> 
-                </p>
-                <h2 className='exp-title-mobile'> 🎓 Education </h2>
-                <div>
-                    {education.map(edu => 
-                        <div className='exp-grid'>
-                            <div className='exp-summary'>
-                                <img className='exp-img' src={edu.image} /> 
-                                <h4> 
-                                    <span> {edu.role} </span> 
-                                    <span style={{ color: 'orange' }}> @ </span> 
-                                    <span style={{ color: 'gray' }}> { edu.title } </span> 
-                                </h4>
-                                <p style={expDateStyle} className='italic'> { edu.date } </p>
-                                <p style={{ fontWeight: 'bold' }}> { edu.desc } </p>
+            <div className='exp-main-grid mt-20'>
+                <h2 className='left-title bolder'> 🎓 Education </h2>
+                <p className='journey-grid'>
+                    {education.map(edu => <>
+                        <div className='journey-info'>
+                            <div className={`journey-img-container ${edu.imagePadding ? 'journey-padding' : ''}`}>
+                                <img className='journey-img' src={edu.image} /> 
                             </div>
+                            <p style={dateStyle} className='bold journey-date'> { edu.date } </p>
                         </div>
+                        <div className='journey-desc'>
+                            <h3 className='subtitle'> 
+                                <span> {edu.role} </span> 
+                                <span style={atStyle}> @ </span> 
+                                <span className='job-position'> { edu.title } </span> 
+                            </h3>
+                            <p style={dateStyle} className='bold journey-date-mb'> { edu.date } </p>
+                            <p>
+                                { edu.desc.map((para, index) => <>
+                                    <div> { para } </div> {(index == edu.desc.length - 1) ? <></> : <br/>}
+                                </>)}
+                            </p>
+                            <LocationPin text={edu.location} />
+                        </div></>
                     )}
-                </div>
+                </p>
             </div>
-        </div>
+        </motion.div>
     )
 }

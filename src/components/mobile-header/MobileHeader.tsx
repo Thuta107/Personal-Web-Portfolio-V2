@@ -12,8 +12,8 @@ export default function MobileHeader() {
     const { darkMode } = useContext(ThemeContext);
 
     const headerStyle = {
-        color: (darkMode) ? 'var(--black)' : 'var(--white)',
-        backgroundColor: (darkMode)? 'var(--white)' : 'var(--black)'
+        color: (darkMode) ? 'var(--white)' : 'var(--black)',
+        backgroundColor: (darkMode)? 'var(--charcoal)' : 'var(--lace)'
     }
 
     const handleClick = () => setOpen((prev) => !prev)
@@ -26,7 +26,7 @@ export default function MobileHeader() {
                         <ThemeToggle />
                     </div>
                 </div>
-                <div> <WebsiteLogo darkMode={!darkMode}/> </div>
+                <div> <WebsiteLogo darkMode={darkMode}/> </div>
                 <div className='right-menu'>
                     {!open ? <GiHamburgerMenu onClick={handleClick} className='right-menu-icon' size={30}/> :
                     <RxCross1 onClick={handleClick} className='right-menu-icon' size={30}/>}

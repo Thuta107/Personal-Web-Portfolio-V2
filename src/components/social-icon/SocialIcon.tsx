@@ -13,7 +13,10 @@ export const SocialIcon: React.FunctionComponent<SocialIconProps> = ({ code, siz
 
     const handleMouseLeave = () => setIsHover(false)
 
-    const handleClick = () => window.open(link, '_blank')
+    const handleClick = () => {
+        window.open(link, '_blank')
+        handleMouseLeave()
+    }
 
     const iconStyle = {
         color: isHover ? color : 'gray',
